@@ -26,7 +26,7 @@ public class MenuInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Iconos/Ajedrez.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/iconos/Ajedrez.png"));
         Desk =  new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics g){
                 g.drawImage(icon.getImage(), 0, 0, getWidth(),getHeight(),this);

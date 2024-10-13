@@ -36,7 +36,7 @@
     <Container class="javax.swing.JDesktopPane" name="Desk">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value=" new javax.swing.JDesktopPane(){&#xa;    public void paintComponent(Graphics g){&#xa;        g.drawImage(icon.getImage(), 0, 0, getWidth(),getHeight(),this);&#xa;    }&#xa;}&#xa;"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/Iconos/Ajedrez.png&quot;));"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/iconos/Ajedrez.png&quot;));"/>
       </AuxValues>
 
       <Layout>
