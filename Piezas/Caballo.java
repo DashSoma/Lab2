@@ -4,6 +4,7 @@
  */
 package Piezas;
 
+import Juego.CuadroPieza;
 import Juego.Tablero;
 
 /**
