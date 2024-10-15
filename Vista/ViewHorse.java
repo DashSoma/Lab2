@@ -7,6 +7,7 @@ package Vista;
 import Juego.Tablero;
 import java.awt.BorderLayout;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -24,6 +25,7 @@ public class ViewHorse extends javax.swing.JDialog {
     public ViewHorse(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new BorderLayout());
         tablero = new Tablero((ViewHorse) (JDialog) null);
 

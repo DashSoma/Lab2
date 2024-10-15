@@ -4,8 +4,15 @@
  */
 package Vista;
 
+import Juego.Tablero;
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -16,8 +23,17 @@ public class FrmMenu extends javax.swing.JFrame {
     /**
      * Creates new form FrmMenu
      */
-    public FrmMenu() {
+    public FrmMenu(java.awt.Frame parent, boolean modal) {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+
+    public void llamarMesaJuego(int Juego) {
+        JOptionPane.showMessageDialog(this, "Iniciando la partida");
+        ViewHorse frm = new ViewHorse(this, rootPaneCheckingEnabled);
+        this.jDesktopPane1.add(frm);
+        frm.setSize(this.jDesktopPane1.getSize());
+        frm.setVisible(true);
     }
 
     /**
@@ -30,11 +46,12 @@ public class FrmMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         ImageIcon icon = new ImageIcon(getClass().getResource("/Iconos/Ajedrez.png"));
-        Desk =  new javax.swing.JDesktopPane(){
+        jDesktopPane1 = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics g){
-                g.drawImage(icon.getImage(), 0, 0, getWidth(),getHeight(),this);
+                g.drawImage(icon.getImage(),0,0,getWidth(),getHeight(),this);
             }
-        };
+        }
+        ;
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,34 +63,34 @@ public class FrmMenu extends javax.swing.JFrame {
             }
         });
 
-        Desk.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout DeskLayout = new javax.swing.GroupLayout(Desk);
-        Desk.setLayout(DeskLayout);
-        DeskLayout.setHorizontalGroup(
-            DeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DeskLayout.createSequentialGroup()
-                .addGap(250, 250, 250)
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(367, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addGap(319, 319, 319))
         );
-        DeskLayout.setVerticalGroup(
-            DeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeskLayout.createSequentialGroup()
-                .addContainerGap(231, Short.MAX_VALUE)
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(291, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(92, 92, 92))
+                .addGap(110, 110, 110))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Desk)
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Desk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jDesktopPane1)
         );
 
         pack();
@@ -81,7 +98,7 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        ViewHorse view = new ViewHorse(this, true);
+        ViewHorse view = new ViewHorse(null,true);
         view.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -99,29 +116,51 @@ public class FrmMenu extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrmMenu.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrmMenu.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrmMenu.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmMenu().setVisible(true);
+   public void run() {
+                new FrmMenu(null,true).setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane Desk;
     private javax.swing.JButton jButton1;
+    private javax.swing.JDesktopPane jDesktopPane1;
     // End of variables declaration//GEN-END:variables
+
+public class ImagenFondo extends JPanel {
+
+    @Override
+    public void paint(Graphics g) {
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Iconos/Ajedrez.png"));
+        g.drawImage(icon.getImage(), 0, 0, getWidth(), getHeight(), this);
+        setOpaque(false);
+        super.paint(g);
+    }
+}
 }
