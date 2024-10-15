@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 import Vista.ViewHorse;
+import Vista.ViewReina;
 //import vista.View;
 
 /**
@@ -27,8 +28,6 @@ public class Tablero extends JPanel {
     private static final int vacio = 0;
     public static final int negro = 1;
     public static final int blanco = 2;
-
-    
 
     /**
      * jugador1, jugador2 Nombre de los dos jugadores
@@ -57,7 +56,9 @@ public class Tablero extends JPanel {
      * Referencia al objeto View, que maneja la interfaz gráfica del juego. Es
      * final, lo que significa que se inicializa en el constructor y no cambia.
      */
-    private final ViewHorse view;
+    private ViewHorse viewHorse;
+
+    private ViewReina viewReina;
 
     /**
      * filaSeleccionada, columnaSeleccionada Variables para almacenar la última
@@ -77,13 +78,19 @@ public class Tablero extends JPanel {
      * detectar clics del ratón. Al hacer clic, se verifica si el movimiento es
      * válido y se actualiza el estado del tablero.
      *
-     * @param view Objeto de la clase View
+     * @param viewHorse
      */
-    public Tablero(ViewHorse view) {
-        this.view = view;
+    public Tablero(ViewHorse viewHorse) {
+        this.viewHorse = viewHorse;
         tablero = new int[tamaño][tamaño];
         jugadorActual = negro;
 
+    }
+
+    public Tablero(ViewReina viewReina) {
+        this.viewReina = viewReina;
+        tablero = new int[tamaño][tamaño];
+        jugadorActual = negro;
     }
 
     /**
@@ -134,7 +141,6 @@ public class Tablero extends JPanel {
         return Math.min(getWidth(), getHeight()) / tamaño;
     }
 
-    
 //    /**
 //     * Su función es colocar la fichas en su posición inicial cada vez que así
 //     * se requiera.
