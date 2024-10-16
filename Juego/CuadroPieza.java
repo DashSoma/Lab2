@@ -4,7 +4,7 @@
  */
 package Juego;
 
-import Juego.Tablero;
+import Juego.CaballoTablero;
 import Piezas.Pieza;
 
 /**

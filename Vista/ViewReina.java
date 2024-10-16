@@ -4,7 +4,7 @@
  */
 package Vista;
 
-import Juego.Tablero;
+import Juego.CaballoTablero;
 import java.awt.BorderLayout;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -16,7 +16,7 @@ import javax.swing.border.EmptyBorder;
  */
 public class ViewReina extends javax.swing.JDialog {
     
-    private Tablero tablero;
+    private CaballoTablero tablero;
 
     
     
@@ -27,7 +27,7 @@ public class ViewReina extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLayout(new BorderLayout());
-        tablero = new Tablero((ViewReina) (JDialog) null);
+        //tablero = new Tablero((ViewReina) (JDialog) null);
 
         JPanel contenedorTablero = new JPanel(new BorderLayout());
         contenedorTablero.setBorder(new EmptyBorder(80, 80, 80, 80)); // Espacios alrededor

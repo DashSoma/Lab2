@@ -4,7 +4,7 @@
  */
 package Vista;
 
-import Juego.Tablero;
+import Juego.CaballoTablero;
 import java.awt.BorderLayout;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -17,7 +17,7 @@ import javax.swing.border.EmptyBorder;
  */
 public class ViewHorse extends javax.swing.JDialog {
 
-    private Tablero tablero;
+    private CaballoTablero tablero;
 
     /**
      * Creates new form ViewHorse
@@ -27,7 +27,7 @@ public class ViewHorse extends javax.swing.JDialog {
         initComponents();
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new BorderLayout());
-        tablero = new Tablero((ViewHorse) (JDialog) null);
+        tablero = new CaballoTablero((ViewHorse) (JDialog) null);
 
         JPanel contenedorTablero = new JPanel(new BorderLayout());
         contenedorTablero.setBorder(new EmptyBorder(80, 80, 80, 80)); // Espacios alrededor

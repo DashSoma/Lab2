@@ -5,7 +5,7 @@
 package Piezas;
 
 import Juego.CuadroPieza;
-import Juego.Tablero;
+import Juego.CaballoTablero;
 
 /**
  *
@@ -22,7 +22,7 @@ public class Caballo extends Pieza {
     }
     
     @Override
-    public boolean puedeMoverse(CuadroPieza dest, Tablero tabl) {
+    public boolean puedeMoverse(CuadroPieza dest, CaballoTablero tabl) {
         if (Math.abs((getCuadroPieza().getPosX() - dest.getPosX())) == 2) {
             if (Math.abs(getCuadroPieza().getPosY() - dest.getPosY()) == 1) {
                 return super.ComprobarMovimientos(dest, tabl);

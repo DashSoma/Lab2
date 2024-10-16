@@ -1,7 +1,7 @@
 package Piezas;
 
 import Juego.CuadroPieza;
-import Juego.Tablero;
+import Juego.CaballoTablero;
 import javax.swing.ImageIcon;
 
 /*
@@ -27,7 +27,7 @@ public abstract class Pieza {
         this.y = y;
     }
 
-    public abstract boolean puedeMoverse(CuadroPieza dest, Tablero tabl);
+    public abstract boolean puedeMoverse(CuadroPieza dest, CaballoTablero tabl);
 
     private int color;
     private int peso;
@@ -90,7 +90,7 @@ public abstract class Pieza {
         this.cuadroPieza = cuadroPieza;
     }
 
-    public boolean ComprobarMovimientos(CuadroPieza Destino, Tablero tbl) {
+    public boolean ComprobarMovimientos(CuadroPieza Destino, CaballoTablero tbl) {
         if (Destino.getPieza() != null) {
             if (Destino.getPieza().getColor() == getCuadroPieza().getPieza().getColor()) {
                 return false;
@@ -100,7 +100,7 @@ public abstract class Pieza {
 
     }
 
-    public boolean MoverPieza(CuadroPieza Destino, Tablero tbl) {
+    public boolean MoverPieza(CuadroPieza Destino, CaballoTablero tbl) {
         if (ComprobarMovimientos(Destino, tbl)) {
             getCuadroPieza().setPieza(null);//Le paso al cuadro donde actualmente esta la pieza el valor de null, que quiere decir que ya no tiene pieza
             if (Destino.getPieza() != null) {//Si hay una pieza en el destino

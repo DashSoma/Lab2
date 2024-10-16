@@ -5,7 +5,7 @@
 package Piezas;
 
 import Juego.CuadroPieza;
-import Juego.Tablero;
+import Juego.CaballoTablero;
 import javax.swing.ImageIcon;
 
 /**
@@ -30,7 +30,7 @@ public class Reina extends Pieza {
     }
 
     @Override
-    public boolean puedeMoverse(CuadroPieza dest, Tablero tabl) {
+    public boolean puedeMoverse(CuadroPieza dest, CaballoTablero tabl) {
         Caballo C = new Caballo();
         C.setCuadroPieza(getCuadroPieza());
         if (C.ComprobarMovimientos(dest, tabl)) {
