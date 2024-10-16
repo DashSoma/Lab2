@@ -4,7 +4,7 @@
  */
 package Vista;
 
-import Juego.Tablero;
+import Juego.CaballoTablero;
 import java.awt.BorderLayout;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -16,7 +16,7 @@ import javax.swing.border.EmptyBorder;
  */
 public class ViewReina extends javax.swing.JDialog {
     
-    private Tablero tablero;
+    private CaballoTablero tablero;
 
     
     
@@ -27,7 +27,7 @@ public class ViewReina extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLayout(new BorderLayout());
-        tablero = new Tablero((ViewReina) (JDialog) null);
+        tablero = new CaballoTablero((ViewReina) (JDialog) null);
 
         JPanel contenedorTablero = new JPanel(new BorderLayout());
         contenedorTablero.setBorder(new EmptyBorder(80, 80, 80, 80)); // Espacios alrededor
@@ -78,6 +78,7 @@ public class ViewReina extends javax.swing.JDialog {
         lbl1Izquierda = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Juego 8 Reinas");
 
         lblAArriba.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblAArriba.setText("A");

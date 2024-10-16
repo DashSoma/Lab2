@@ -4,15 +4,10 @@
  */
 package Vista;
 
-import Juego.Tablero;
-import java.awt.BorderLayout;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -26,14 +21,6 @@ public class FrmMenu extends javax.swing.JFrame {
     public FrmMenu(java.awt.Frame parent, boolean modal) {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    }
-
-    public void llamarMesaJuego(int Juego) {
-        JOptionPane.showMessageDialog(this, "Iniciando la partida");
-        ViewHorse frm = new ViewHorse(this, rootPaneCheckingEnabled);
-        this.jDesktopPane1.add(frm);
-        frm.setSize(this.jDesktopPane1.getSize());
-        frm.setVisible(true);
     }
 
     /**
@@ -111,12 +98,14 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void btnCaballoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaballoActionPerformed
 
-        ViewHorse view = new ViewHorse(null,true);
+        ViewHorse view = new ViewHorse(null, false);
         view.setVisible(true);
+        view.ejecutarRecorrido();
+
     }//GEN-LAST:event_btnCaballoActionPerformed
 
     private void btnReinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReinasActionPerformed
-        ViewReina view = new ViewReina(null,true);
+        ViewReina view = new ViewReina(null, false);
         view.setVisible(true);
     }//GEN-LAST:event_btnReinasActionPerformed
 
@@ -135,34 +124,30 @@ public class FrmMenu extends javax.swing.JFrame {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class  
+            java.util.logging.Logger.getLogger(FrmMenu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrmMenu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class  
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrmMenu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmMenu.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrmMenu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-   public void run() {
-                new FrmMenu(null,true).setVisible(true);
+            public void run() {
+                new FrmMenu(null, true).setVisible(true);
             }
         });
     }
@@ -172,14 +157,14 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     // End of variables declaration//GEN-END:variables
 
-public class ImagenFondo extends JPanel {
+    public class ImagenFondo extends JPanel {
 
-    @Override
-    public void paint(Graphics g) {
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Iconos/Ajedrez.png"));
-        g.drawImage(icon.getImage(), 0, 0, getWidth(), getHeight(), this);
-        setOpaque(false);
-        super.paint(g);
+        @Override
+        public void paint(Graphics g) {
+            ImageIcon icon = new ImageIcon(getClass().getResource("/Iconos/Ajedrez.png"));
+            g.drawImage(icon.getImage(), 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
     }
-}
 }
