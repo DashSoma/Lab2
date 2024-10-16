@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 /**
  *
  * @author Usuario
- */
+ */      //modificar
 public class Reina extends Pieza {
 
     public Reina(boolean blanca, int x, int y) {
